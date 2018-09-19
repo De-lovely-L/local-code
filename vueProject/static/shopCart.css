@@ -1,0 +1,89 @@
+@charset "utf-8";
+#app2{
+		width: 40%;
+		margin: auto;
+	}
+	span{
+		display: inline-block;
+	}
+	span:first-child{
+		color: red;
+		font-weight: bold;
+		opacity: 0.6;
+	}
+	span:last-child{
+		color: red;
+		margin-left: 200px;
+	}
+	section{
+		width: 366px;
+		height: 100px;
+		margin-top: 40px;
+		border-bottom: 1px solid #dddddd;
+	}
+	#shopMeg{
+		display: inline-block;
+		float: left;
+		width: 265px;
+	}
+	.svgMeg{
+		width: 100px;
+		height: 100px;
+		display: inline-block;
+		float: left;
+	}
+	#singlePrice{
+		float: left;
+		color: red;
+	}
+	input{
+		width: 40px;
+		text-align: center;
+	}
+	p{
+		text-align: left;
+		margin: auto;
+	}
+	.number{
+		width: 260px;
+		display: inline-block;
+		float: left;
+	}
+	#totalPrice{
+		float: right;
+	}
+	.panel_is_show{
+		display: none;
+	}
+	.panel{
+		background-color: floralwhite;
+		width: 500px;
+		height: 200px;
+		line-height: 30px;
+		left: 30%;
+		top: 30%;
+		color: black;
+		z-index: 2;
+		position: absolute;
+		text-align: center;
+		
+	}
+	.panel_content{
+		margin-top: 50px;
+	}
+	.panel_title{
+		margin-bottom: 50px;
+	}
+	.cencel{
+		background: lightgray;
+		margin-right: 20px;
+	}
+	.submit{
+		background: red;
+		color: white;
+	}
+	button{
+		border:0;
+		padding: 5px 10px;
+	}
+	

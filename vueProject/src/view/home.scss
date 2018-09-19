@@ -1,0 +1,35 @@
+.head{
+        background-color: cornflowerblue;
+        height: 50px;
+}
+h1 {
+    color: white;
+    font-family: "blackadder itc";
+    margin-left: 20px;
+    line-height: 50px;
+    display: inline-block;
+    width: 50%;
+}
+.fl{
+    float: right;
+    line-height: 45px;
+}
+
+.layout-menu {
+    float: left;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    line-height: 24px;
+    overflow-x: hidden;
+    height: 100%;
+}
+.layout-content {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1000;
+}

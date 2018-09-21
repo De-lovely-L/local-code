@@ -1,0 +1,94 @@
+### v-for 的使用 
+* 可以单独使用操作数组（item，index）
+* 可以使用操作对象（value, key, index）
+* key 是为了告诉vue   js 中的元素与页面之间的关联，当视图删除元素的时候，是单个元素的删除而不是整版删除，所以需要关联其关系，
+设置
+####父子组件的使用
+* 父需要声明子组件，引入子组件对象
+* 复用
+*在尝试的过程中：遇到这样一个错误：Do not use built-in or reserved HTML elements as component id: header
+	可能的原因： 组件不能和html标签重复
+		     header 组件与h5新标签重复
+             这类情况下：：一是完全不合法的标签名，例如 </>；
+
+　　　　二是与 HTML 元素重名会产生不确定的行为，例如使用 input 做组件名不会解析到自定义组件，使用 button 在 Chrome 上正常但在 IE 上不正常；
+
+　　　　三是与 Vue 保留的 slot、partial、component 重名，因为会优先以本身的意义解析，从而产生非预期的结果。
+
+####全局组件
+*使用方便，不需要引入和声明，直接用
+* 在main.js 中引入一次，使用‘ vue.component('组件名',组件对象) ’
+* 所有的组件就可以直接通过组件名使用
+#####父给子传递值
+* 父组件通过子组件的属性将值传递
+	方式有常量 : prop1='常量值' 
+	          变量:   :prop2='变量名'
+* 子组件需要声明
+	根属性props：['prop1'，‘prop2’]
+	在页面中直接使用{{prop1}}
+	在js中 使用   this.prop1    
+#####子组件向父通信（vuebus）
+* 通过new Vue()这样的一个对象，来$on（‘事件名’，fn（prop1，prop2））
+* 另一个组件引入同一个vuebus ，来$emit('事件名'，prop1，prop2)
+
+######总结
+* 1、创建index.html，看看其所在文件和webpack.config.js 文件中描述的关系
+* 2、 在index.html  div-> id -> app
+* 3、 创建main.js , 看看其所在文件和webpack.config.js 文件中描述的关系
+* 4、 在main.js 中引入vue和相关组件对象
+* 5、 new Vue（选项options），目的地el    渲染内容  render：c=>c(App) 渲染App的内容
+* 6、 编写app.vue：
+	只有一个根节点
+	style 加上scoped（范围的）之后，样式支队当前模板有效
+* 7、可能使用组件或者使用函数或接受参数
+	options（根属性）：
+		data 是一个函数，return一个对象
+		methods 是一个对象，key 是函数名，value是函数体
+		components 是一个对象，key是组件名，值是组件对象
+		props 是一个数组，元素是多个接受的参数
+
+###########day one end 
+复习
+###
+   实例：
+     - 在组件内（xxx.vue）中的this
+     -  new Vue（）
+     - 事件
+	+this.$on(事件名，回调函数（参数）)
+	+this.$emit(事件名，数据)
+	+this.$once(事件名，回调函数（参数）)就触发一次
+	+this.$off(事件名）；取消事件
+     全局
+         - Vue.component('组件名'，组件对象)在哪都可以使用
+      组件传值
+         -父传子：属性作为参数
+	+常量  title=‘xxx’  子组件声明接受参数   props:['xxx']
+	+变量  :title = 'num'   子组件声明接受参数   props:['num']
+
+         -子传父：vuebus （只能是同一辆车）
+	+先停车到父组件，on一下
+	+ 在开车到子组件，如果需要的话，在emit一下，触发上述时间的回调函数
+#####day  two
+
+#######过滤器
+        组件内过滤器 + 全局过滤器
+	- 组件内过滤器就是options中的一个filters的属性（一个对象）
+	      多个key就是不同过滤器名，多个value就是与key 对应的过滤器方式函数体
+	- Vue.filter(名，fn)	
+对于全局过滤器来说，范围大，组件内过滤器范围小，如果出现同名时，组件内的权利大，全局小
+#####获取dom元素
+        *  在指定元素上添加ref=‘A’
+	-如果ref放在原生dom元素上，获取的数据就是原生dom对象，可以直接操作
+	-如果放在组件对像上，获取的就是组件对象
+		通过this.$refs.A.$el获取到dom原生对象，进行操作
+
+#######生命周期
+created(){}       //组件创建后，数据已经完成初始化，dom还未生成
+mounted(){}	//数据装载dom上后，各种数据已经就位，将数据渲染到dom上，dom已经生成
+
+#####mint-ui       移动端饿了么
+	element-ui   pc端
+
+
+
+

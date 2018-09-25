@@ -1,3 +1,45 @@
+######Git使用：
+****工作流：你的本地仓库由 git 维护的三棵"树"组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。
+你可以提出更改（把它们添加到暂存区），使用如下命令：
+	git add <filename>
+	git add *
+这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：
+	git commit -m "代码提交信息"
+现在，你的改动已经提交到了 HEAD，但是还没到你的远端仓库。
+******推送改动：
+        你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：
+	git push origin master
+        可以把 master 换成你想要推送的任何分支。
+        如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：
+	git remote add origin <server>
+        如此你就能够将你的改动推送到所添加的服务器上去了
+*****分支
+      分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是"默认的"分支。在其他分支上进行开发，完成后再将它们合并到主分支上。
+  -branches
+       创建一个叫做"feature_x"的分支，并切换过去：
+       	git checkout -b feature_x
+ 切换回主分支：
+        	git checkout master
+  再把新建的分支删掉：
+	git branch -d feature_x
+   除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：
+	git push origin <branch>
+   -更新与合并
+       要更新你的本地仓库至最新改动，执行：
+	git pull
+      以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。
+      要合并其他分支到你的当前分支（例如 master），执行：
+	git merge <branch>
+在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现冲突（conflicts）。 这时候就需要你修改这些文件来手动合并这些冲突（conflicts）。改完之后，你需要执行如下命令以将它们标记为合并成功：
+	git add <filename>
+在合并改动之前，你可以使用如下命令预览差异：
+	git diff <source_branch> <target_branch>
+
+
+
+
+
+
 ### v-for 的使用 
 * 可以单独使用操作数组（item，index）
 * 可以使用操作对象（value, key, index）
@@ -88,9 +130,24 @@ mounted(){}	//数据装载dom上后，各种数据已经就位，将数据渲染到dom上，dom已经生成
 
 #####mint-ui       移动端饿了么
 	element-ui   pc端
+#####vue核心插件： vue-router 路由  ，  vuex 管理全局共享数据
+  * 使用方式
+       -下载： ‘npm i vue-router -S’
+       -在main.js中引入  ‘import VueRouter from “”vue-router“”’
+       -安装插件 ‘Vue.use(VueRouter)’
+######router-link
+   -<router-link to="/beijing">去北京</router-link>
+   -<router-link :to={name:'beijing'}>去北京</router-link>
+****参数：
+      - 在vue-router中，有两大对象被挂载到了实例this
+      -$route(只读、具备信息的对象)、$router（具备功能函数）
 
-
-
-
-
+query 查询字符串
+	1、去哪<router-link :to="{name:'details',query:{id:1}}">query参数查看</router-link>
+	2、导航（查询字符串path不用改）{ name: 'details', path:'/details', 组件}
+	3、获取路由参数   this.$route.query.id(注意是什么方式以及对应的key值)
+params 方式
+	1、去哪<router-link :to="{name:'details',params:{id:1}}">params参数查看</router-link>
+	2、导航（path方式需要在路由规则上加上/:）{ name:  'details', path: '/details/:id',  组件}
+	3、获取路由参数   this.$route.params.id(注意是什么方式以及对应的key值)
 

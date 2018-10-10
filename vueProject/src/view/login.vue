@@ -2,7 +2,7 @@
 	<div>
 		<div class="login">
 			<div class="login-icon">
-				<Card style="width:350px;margin: 200px auto;">
+				<Card style="width:400px; margin: 200px auto; height: 300px;">
 			        <p slot="title">
 			            <Icon type="ios-film-outline"></Icon>
 			            欢迎登录
@@ -66,7 +66,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.login-icon{
 		background: url(../assets/u=3203891712,2067839020&fm=26&gp=0.jpg);
 	}

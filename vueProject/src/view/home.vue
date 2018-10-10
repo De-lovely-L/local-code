@@ -1,38 +1,17 @@
 <template>
 	<div>
-		<div class="head">
-			<h1>解忧codeHouse</h1>
-			<!--<img src="../assets/u=639605140,3340384717&fm=26&gp=0.jpg"  width="100px" height="100px"/>-->
-			<div class="fl">
-			    <RadioGroup v-model="theme1" size="large">
-			        <Radio label="light"></Radio>
-			        <Radio label="dark"></Radio>
-			    </RadioGroup>
-		    </div>
-		</div>
-		<div>
-		<Menu :theme="theme1" active-name="1">
-	        <MenuGroup title="内容管理">
-	            <MenuItem name="1">
-	                <Icon type="md-document" />
-	                文章管理
-	            </MenuItem>
-	            <MenuItem name="2">
-	                <Icon type="md-chatbubbles" />
-	                评论管理
-	            </MenuItem>
-	        </MenuGroup>
-	        <MenuGroup title="统计分析">
-	            <MenuItem name="3">
-	                <Icon type="md-heart" />
-	                用户留存
-	            </MenuItem>
-	            <MenuItem name="4">
-	                <Icon type="md-leaf" />
-	                流失用户
-	            </MenuItem>
-	        </MenuGroup>
-    	</Menu>
+		<header-vue :title="title"></header-vue>
+		<div class="menu">
+			<Menu :theme="theme1" active-name="1" @on-select="handleSelect">
+		            <MenuItem name="0" >
+		                <!-- <router-link :to="{name:'first'}">{{item.title}}</router-link> -->
+										<router-link :to="{name:'first'}">文章管理</router-link>
+		            </MenuItem>
+								<MenuItem name="1" >
+		                <!-- <router-link :to="{name:'first'}">{{item.title}}</router-link> -->
+										<router-link :to="{name:'second'}">评论管理</router-link>
+		            </MenuItem>
+	    	</Menu>
     	</div>
     	<div class="layout-content">
             <keep-alive include="v2BuildOrder">
@@ -40,17 +19,39 @@
             </keep-alive>
     	</div>
 	</div>
-	
 
 </template>
 
 <script>
+//引入子组件对象
+import headerVue from '@/view/header.vue'
+
 	export default{
 		name:'home',
 		data(){
 			return{
 				theme1: 'light',
+				title:'解忧codeHouse',
+				menusData:[
+					{'title': '文章管理','type': 'md-leaf', 'link': 'first'},
+					{'title': '评论管理','type': 'ios-paper', 'link': 'second'},
+					{'title': '用户留存','type': 'ios-people', 'link': 'shop'},
+					{'title': '流失用户','type': 'ios-analytics','link': 'fourth'},
+				]
 			}
+		},
+		methods:{
+			handleSelect(name){
+			
+     		},	
+		},
+		components:{
+			//组件名（在模板中使用）： 组件对象
+			headerVue
+		},
+		created(){
+			console.log(this.$http);
+			
 		}
 	}
 </script>

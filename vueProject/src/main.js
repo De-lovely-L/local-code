@@ -22,6 +22,26 @@ Vue.use(MintUi);
 //1：组件库，在内部注册了各种全局组件
 //2：插件，挂载属性，为方便this，可以使用其功能
 //3： 在实际开发过程中按需引入，减少包的大小
+import { Indicator } from 'mint-ui';
+//引入axios
+import axios from 'axios';
+Vue.prototype.$axios=axios;    //那么在其他vue组件中就可以this.$axios调用使用
+//axios.default.baseURL = 'http://mtms-dev.yunba.com/api/mtms'
+
+//定义拦截器
+//在请求之前
+  axios.interceptors.request.use(function(config){
+ 		Indicator.open('加载中。。。。');
+//	 	if(config.method === 'post') {
+//	    config.data = qs.stringify(config.data);
+//	  }
+	  return config;  //添加这一行
+  })
+  
+ axios.interceptors.response.use(function(config){
+ 	Indicator.close();
+})
+
 
 Vue.config.productionTip = false
 

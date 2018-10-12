@@ -10,6 +10,7 @@
 		英雄姓名：<input type="text" v-model="name"><br />
 		英雄等级：<input type="text" v-model="score">
 		<i-button type="primary" @click="addHero">添加英雄</i-button>
+		<hr />
 	</div>
 </template>
 

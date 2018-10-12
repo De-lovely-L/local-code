@@ -11,6 +11,10 @@
 		                <!-- <router-link :to="{name:'first'}">{{item.title}}</router-link> -->
 						<router-link :to="{name:'second'}">评论管理</router-link>
 		            </MenuItem>
+		            <MenuItem name="2">
+		                <!-- <router-link :to="{name:'first'}">{{item.title}}</router-link> -->
+						<router-link :to="{name:'custometList'}">用户列表</router-link>
+		            </MenuItem>
 	    	</Menu>
     	</div>
     	<div class="layout-content">

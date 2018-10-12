@@ -149,36 +149,4 @@ query 查询字符串
 params 方式
 	1、去哪<router-link :to="{name:'details',params:{id:1}}">params参数查看</router-link>
 	2、导航（path方式需要在路由规则上加上/:）{ name:  'details', path: '/details/:id',  组件}
-	3、获取路由参数   this.$route.params.id(注意是什么方式以及对应的key值)
-######编程式导航
-    ＊this.$router.go 根据浏览器纪录 前进or后退
-    ＊this.$router.push(直接跳转到某个页面显示)
-	－push参数：字符串 ／xxx
-	－对象：｛name：‘／xxx’｝
-#######重定向和404
- ＊进入后，默认是／
- ＊方法可以是‘{path:’/’,redirect:’/home’}’
-   （更好维护）‘{path:’/’,redirect:{name:’home’}}’
- *404:在路由规则的最后的一个规则
-	－写一个强大的匹配 
-	    －‘｛path：‘＊’，component：notFoundVue｝’(*匹配所有)
-
-#######多视图
-    以前可以一次放一个坑对应一个路由和显示一个组件（一次行为 ＝ 一个坑＋一个路由＋一个组件）
-    现在可以在app。vue中多留几个坑，分别给坑取个名字，然后再全局注册几个组件，再全局路由（main。js）中注册相对应的路由，（此时注意组件是components），没有取名的坑，name就是default
-   ＊components多视图，是一个对象  key为对应的name属性，value为显示的组件对象
-######嵌套路由
-   *用单页面去实现多页面   视图包含视图
-#####vue-resource插件
-   ＊发请求，现在使用axios
-     get： 
-	this.$http.get(‘地址’).then(data =>{
-		console.log(data);
-	},err =>{console.log(err)})
-    *post:
-	this.$http.post(‘地址’,{conent:’xxx’},{emulateJSON: true}).then(data =>{
-		console.log(data);
-	},err =>{console.log(err)})
-
-######axios使用
-	
+	3、获取路由参数   this.$route.params.id(注意是什么方式以及对应的key值)	

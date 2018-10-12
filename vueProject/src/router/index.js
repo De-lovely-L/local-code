@@ -10,7 +10,8 @@ const home = () => import('@/view/home'),
 	second = () => import('@/components/second'),
 	beautyList = () => import('@/view/study/buity_list'),
 	father =() => import('@/frame/father'),
-	mintUi =() => import('@/view/study/mintStudy');
+	mintUi =() => import('@/view/study/mintStudy'),
+	custometList =() => import('@/components/customer/index');
 Vue.use(Router)
 
 export default new Router({
@@ -33,58 +34,63 @@ export default new Router({
 			//如果这里是写／xx具体的名称，其路径就是绝对路径，若写成xx   ，就是相对路径
 			{name: 'first', path: 'first', component: first},
 			{name: 'second', path: 'second', component: second},
+			{
+				path:'beautyList',
+				name:'beautyList',
+				component:beautyList
+			},
+			{
+				path:'custometList',
+				name:'custometList',
+				component:custometList
+			}
 		]
     },
     {
-		  path: '/user',
-		  name:'user',
-		  component: routerView,//引入子路由
+		path: '/user',
+		name:'user',
+		component: routerView,//引入子路由
 //引入子页面
-		  children: [
+		children: [
 		    {path: 'list',name:'list',component:(resolve)=>require(['../components/user/list'],resolve)},
 		    {path: 'details/:id',name:'details',component:(resolve)=>require(['../components/user/details'],resolve)},
 	  	],
-		},
-		{
-			path:'/third',
-			name:'third',
-			component:(resolve)=>require(['@/components/third'],resolve),
-			/*beforeRouterLeave(to, from, next){
-    		//设置下一个路由的meta
-    		to.meta.keepAlive=false;
-    		next();
-    	}*/
-		},
-		{
-			path:'/fourth',
-			name:'fourth',
-			component:(resolve)=>require(['@/components/fourth'],resolve)
-		},
-		{
-			path:'/shop',
-			name:'shop',
-			component:(resolve)=>require(['@/components/shop'],resolve)
-		},
-		{
-			path:'/beautyList',
-			name:'beautyList',
-			component:beautyList
-		},
-		{
-			path:'/father',
-			name:'father',
-			component:father
-		},
-		//mint-ui
-		{
-			path:'/mint-ui',
-			name:'mintUi',
-			component:mintUi
-		},
-		{
-			path:'*',
-			component:notFound
-		}
+	},
+	{
+		path:'/third',
+		name:'third',
+		component:(resolve)=>require(['@/components/third'],resolve),
+		/*beforeRouterLeave(to, from, next){
+		//设置下一个路由的meta
+		to.meta.keepAlive=false;
+		next();
+	}*/
+	},
+	{
+		path:'/fourth',
+		name:'fourth',
+		component:(resolve)=>require(['@/components/fourth'],resolve)
+	},
+	{
+		path:'/shop',
+		name:'shop',
+		component:(resolve)=>require(['@/components/shop'],resolve)
+	},
+	{
+		path:'/father',
+		name:'father',
+		component:father
+	},
+	//mint-ui
+	{
+		path:'/mint-ui',
+		name:'mintUi',
+		component:mintUi
+	},
+	{
+		path:'*',
+		component:notFound
+	}
   ]
 })
 

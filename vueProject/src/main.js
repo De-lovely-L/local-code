@@ -16,6 +16,7 @@ Vue.use(VueResource);//插件挂载实例     未来可通过this.$http  vue是�
 import MintUi from 'mint-ui';
 //引入样式
 import 'mint-ui/lib/style.css';
+import '@/scss/common/index.scss';
 //安装插件
 Vue.use(MintUi);
 //use 实际操作

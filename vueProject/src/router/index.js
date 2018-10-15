@@ -22,12 +22,12 @@ export default new Router({
       component: (resolve)=>require(['@/view/login'],resolve)
 	},
 	{
-	  path: '/',   
+	  path: '/login',   
 	  //  重定向    redirect:'/login',
       redirect: {name: "login"},//为后期更好维护，写成name形式
 	},
     {
-    	path:'/home',
+    	path:'/',
 		name:'home',
 		component:home,
     	children:[

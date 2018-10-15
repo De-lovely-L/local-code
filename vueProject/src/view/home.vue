@@ -34,7 +34,7 @@ import firstVue from '@/components/first.vue'
 		name:'home',
 		data(){
 			return{
-				theme1: 'light',
+				theme1: 'dark',
 				title:'解忧codeHouse',
 				menusData:[
 					{'title': '文章管理','type': 'md-leaf', 'link': 'first'},

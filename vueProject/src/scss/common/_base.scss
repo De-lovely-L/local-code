@@ -1,0 +1,40 @@
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.menu{
+    float: left;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #324057;
+    line-height: 24px;
+    overflow-x: hidden;
+}
+.layout-content {
+    position: absolute;
+    left: 200px;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    
+    .contain-head{
+        padding: 8px 15px;
+        position: fixed;
+        width: 100%;
+        z-index: 6;
+        background-color: #e0e6ed;
+    }
+    .contain-main{
+        margin-left: 25px;
+        margin-right: 25px;
+        padding-top: 70px;
+        padding-bottom: 15px;
+    }
+}

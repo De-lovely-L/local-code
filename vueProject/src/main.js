@@ -27,7 +27,7 @@ import { Indicator } from 'mint-ui';
 //引入axios
 import axios from 'axios';
 Vue.prototype.$axios=axios;    //那么在其他vue组件中就可以this.$axios调用使用
-//axios.default.baseURL = 'http://mtms-dev.yunba.com/api/mtms'
+//axios.default.baseURL = 'http://182.254.146.100:8899/api/getlunbo'
 
 //定义拦截器
 //在请求之前

@@ -26,8 +26,14 @@ export default new Router({
 	  //  重定向    redirect:'/login',
       redirect: {name: "login"},//为后期更好维护，写成name形式
 	},
+	//默认项目地址
+	{
+		path:'/',
+		name:'projectIndex',
+		component:(resolve)=>require(['@/components/project/index'],resolve),
+	},
     {
-    	path:'/',
+    	path:'/home',
 		name:'home',
 		component:home,
     	children:[
@@ -55,16 +61,6 @@ export default new Router({
 		    {path: 'list',name:'list',component:(resolve)=>require(['../components/user/list'],resolve)},
 		    {path: 'details/:id',name:'details',component:(resolve)=>require(['../components/user/details'],resolve)},
 	  	],
-	},
-	{
-		path:'/third',
-		name:'third',
-		component:(resolve)=>require(['@/components/third'],resolve),
-		/*beforeRouterLeave(to, from, next){
-		//设置下一个路由的meta
-		to.meta.keepAlive=false;
-		next();
-	}*/
 	},
 	{
 		path:'/fourth',

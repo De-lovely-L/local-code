@@ -15,6 +15,7 @@ const home = () => import('@/view/home'),
 Vue.use(Router)
 
 export default new Router({
+//	linkActiveClass:'xxx',  可以在这里面添加某个样式类，这样的话默认全局根据路由来添加样式
   routes: [
     {
       path: '/login',   
@@ -28,9 +29,24 @@ export default new Router({
 	},
 	//默认项目地址
 	{
-		path:'/',
+		path:'/projectIndex',
 		name:'projectIndex',
 		component:(resolve)=>require(['@/components/project/index'],resolve),
+	},
+	{
+		path:'/project/shopCart',
+		name:'proShopCart',
+		component:(resolve)=>require(['@/components/project/shopCart/index'],resolve),
+	},
+	{
+		path:'/project/search',
+		name:'proSearch',
+		component:(resolve)=>require(['@/components/project/search/index'],resolve),
+	},
+	{
+		path:'/project/mine',
+		name:'proMine',
+		component:(resolve)=>require(['@/components/project/mine/index'],resolve),
 	},
     {
     	path:'/home',

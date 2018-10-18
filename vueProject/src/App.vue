@@ -9,23 +9,25 @@
 <template>
   <div id="app">
  	<mt-header title="DOUBLE_L"></mt-header>
+ 	
  	<router-view></router-view>
+ 	
  	<mt-tabbar>
-	  <mt-tab-item id="首页">
+	  <mt-tab-item>
 	  	<img slot="icon" src="./assets/home.png">
-	    首页
+	  	<router-link :to="{name: 'projectIndex'}">首页</router-link>
 	  </mt-tab-item>
-	  <mt-tab-item id="购物车">
+	  <mt-tab-item>
 	  	<img slot="icon" src="./assets/shopCar.png">
-	    购物车
+	   <router-link :to="{name: 'proShopCart'}"> 购物车</router-link>
 	  </mt-tab-item>
-	  <mt-tab-item id="查找">
+	  <mt-tab-item>
 	  	<img slot="icon" src="./assets/search.png">
-	    查找
+	    <router-link :to="{name: 'proSearch'}">查找</router-link>
 	  </mt-tab-item>
-	  <mt-tab-item id="我的">
-	    <img slot="icon" src="./assets/mine.png">
-	    我的
+	  <mt-tab-item>
+	  	<img slot="icon" src="./assets/mine.png">
+	    <router-link :to="{name: 'proMine'}">我的</router-link>
 	  </mt-tab-item>
 	</mt-tabbar>
    </div>
@@ -52,4 +54,7 @@ export default{
 </script>
 
 <style scoped>
+	.router-link-active{
+		color: red;
+	}
 </style>

@@ -18,7 +18,7 @@
 			<Row>
 		        <i-col span="8">
 		        	<Icon type="logo-javascript" color="pink" size="32" />
-		        	<em>javascript</em>
+		        	<router-link :to="{'name':'jsList'}"><em>javascript</em></router-link>
 		        </i-col>
 		        <i-col span="8">
 		        	<Icon type="ios-nutrition" color="#26a2ff" size="32" />

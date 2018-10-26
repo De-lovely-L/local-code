@@ -42,7 +42,10 @@ Vue.prototype.$axios=axios;    //那么在其他vue组件中就可以this.$axios
  axios.interceptors.response.use(function(config){
  	Indicator.close();
 })
-
+//定义全局组件
+//＊1.引入全局组件
+import NavBar from './common/nav-bar.vue'
+Vue.component('navBar',NavBar);//使用最好以nav-bar
 
 Vue.config.productionTip = false
 

@@ -48,6 +48,17 @@ export default new Router({
 		name:'proMine',
 		component:(resolve)=>require(['@/components/project/mine/index'],resolve),
 	},
+	{
+		path:'/project/jsIndex',
+		name:'jsList',
+		component:(resolve)=>require(['@/components/project/js/index'],resolve),
+	},
+	{
+		path:'/project/jsDetails',
+		name:'jsDetails',
+		component:(resolve)=>require(['@/components/project/js/details'],resolve),
+	},
+	
     {
     	path:'/home',
 		name:'home',

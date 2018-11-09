@@ -68,6 +68,6 @@
 
 <style scoped>
 	.login-icon{
-		background: url(../assets/u=3203891712,2067839020&fm=26&gp=0.jpg);
+		background: url(../assets/p2.jpg);
 	}
 </style>

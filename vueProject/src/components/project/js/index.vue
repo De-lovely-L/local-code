@@ -3,32 +3,14 @@
 		<nav-bar title="js列表"></nav-bar>
 		<div class="">
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<router-link :to="{'name':'jsDetails'}" class="flex">
-						<img class="mui-media-object mui-pull-right" src="../../../assets/变量设置模板.svg">
+				<li class="mui-table-view-cell mui-media" v-for="(item) in jsList" :key='item.id'>
+					<div class="flex">
+						<img class="mui-media-object mui-pull-right" :src="item.url">
 						<div class="mui-media-body">
-							变量提升
-							<p class='mui-ellipsis'>在ES6之前，JavaScript没有块级作用域(一对花括号{}即为一个块级作用域)，只有全局作用域和函数作用域。变量提升即   将变量声明提升到它所在作用域的最开始的部分。</p>
+							<a @click="handlerDetail(item.id)">{{item.title}}</a>
+							<p class='mui-ellipsis'>{{item.content}}</p>
 						</div>
-					</router-link>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<router-link :to="{'name':'jsDetails'}" class="flex">
-						<img class="mui-media-object mui-pull-right" src="../../../assets/循环.svg">
-						<div class="mui-media-body">
-							map() 
-							<p class='mui-ellipsis'>方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。(参数也是函数提供)</p>
-						</div>
-					</router-link>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<router-link :to="{'name':'jsDetails'}" class="flex">
-						<img class="mui-media-object mui-pull-right" src="../../../assets/js.svg">
-						<div class="mui-media-body">
-							js的作用
-							<p class='mui-ellipsis'>一个页面的交互，不能完全使用css或者html实现，需要一些js配合</p>
-						</div>
-					</router-link>
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -39,11 +21,33 @@
 export default{
 	data(){
 		return{
-
+			jsList:[
+			{
+				'id': 1,
+				'url':require('../../../assets/变量设置模板.svg'),
+				'title':'变量提升',
+				'content':'在ES6之前，JavaScript没有块级作用域(一对花括号{}即为一个块级作用域)，只有全局作用域和函数作用域。变量提升即   将变量声明提升到它所在作用域的最开始的部分。'
+			},
+			{
+				'id': 2,
+				'url':require('../../../assets/循环.svg'),
+				'title':'map() ',
+				'content':'方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。(参数也是函数提供)'
+			},
+			{
+				'id': 3,
+				'url':require('../../../assets/js.svg'),
+				'title':'js的其一作用 ',
+				'content':'一个页面的交互，不能完全使用css或者html实现，需要一些js配合'
+			}
+			]
 		}
 	},
-	components:{
-		
+	methods:{
+		handlerDetail(index){
+			debugger
+			this.$router.push({name:'jsDetails',params:{ jsId : index }})
+		}
 	}
 
 }
@@ -55,6 +59,7 @@ export default{
 	}
 	.mui-table-view-cell{
 		margin: 25px auto;
+		position: relative;
 	}
 	.flex{
 		display: flex;

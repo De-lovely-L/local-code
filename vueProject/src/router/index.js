@@ -5,27 +5,31 @@ import Router from 'vue-router'
 //import first from '@/components/first'  //或者可以直接定义：const first={template:'<div><h2>i’m first page</h2></div>'}
 const routerView = () => import('@/common/router-view');
 const home = () => import('@/view/home'),
+    login =() => import('@/view/login.vue'),
 	notFound = () => import('@/common/notFound'),
 	first = () => import('@/components/first'),
 	second = () => import('@/components/second'),
 	beautyList = () => import('@/view/study/buity_list'),
 	father =() => import('@/frame/father'),
 	mintUi =() => import('@/view/study/mintStudy'),
+	photoShare = () => import('@/components/project/photoShare/index.vue'),
 	custometList =() => import('@/components/customer/index');
+	
+
 Vue.use(Router)
 
 export default new Router({
 //	linkActiveClass:'xxx',  可以在这里面添加某个样式类，这样的话默认全局根据路由来添加样式
   routes: [
-    {
-      path: '/login',   
-      name: 'login',
-      component: (resolve)=>require(['@/view/login'],resolve)
-	},
+//	{
+//	  path: '/login',   
+//	  //  重定向    redirect:'/login',
+//    redirect: {name: "login"},//为后期更好维护，写成name形式
+//	},
 	{
-	  path: '/login',   
-	  //  重定向    redirect:'/login',
-      redirect: {name: "login"},//为后期更好维护，写成name形式
+		path:'/login',
+		name:'login',
+		component:login,
 	},
 	//默认项目地址
 	{
@@ -54,11 +58,15 @@ export default new Router({
 		component:(resolve)=>require(['@/components/project/js/index'],resolve),
 	},
 	{
-		path:'/project/jsDetails',
+		path:'/project/jsDetails/:jsId',
 		name:'jsDetails',
 		component:(resolve)=>require(['@/components/project/js/details'],resolve),
 	},
-	
+	{
+		path:'/project/photoShare',
+		name:'photoShare',
+		component:photoShare
+	},
     {
     	path:'/home',
 		name:'home',

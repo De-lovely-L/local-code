@@ -1,8 +1,4 @@
 @charset "utf-8";
-#app2{
-		width: 40%;
-		margin: auto;
-	}
 	span{
 		display: inline-block;
 	}
@@ -86,4 +82,3 @@
 		border:0;
 		padding: 5px 10px;
 	}
-	

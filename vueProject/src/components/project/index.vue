@@ -47,11 +47,21 @@
 		        	<router-link :to="{'name':'photoShare'}"><p>图文分享</p></router-link>
 		        </i-col>
 		    </Row>
+		    <Row>
+		    	<i-col>
+		    		<div class="qrcode">
+		    			<img :src="`http://wx.yunba.com/tms/order/qrcode/img?order_no=${2018111500032}`"/>
+		    			<!--<div class="code" ref="code"></div>-->
+		    			<p>扫码 call me </p>
+		    		</div>
+		    	</i-col>
+		    </Row>
 	    </div>
 	</div>
 </template>
 
 <script>
+	import QRCode from '@/utils/qrcode.js'
 	export default{
 		name:'projectIndex',
 		data(){
@@ -59,6 +69,14 @@
 			}
 		},
 		mounted(){
+//			var qrcode = new QRCode(this.$refs.code, {
+//            width : 160,//设置宽高
+//            height : 160,
+//            colorDark : "#000000",
+//            colorLight : "#ffffff",
+//        });
+//        qrcode.makeCode('https://www.baidu.com/');
+
 		},
 		 computed:{
 		 	
@@ -83,6 +101,12 @@
 	em{
 		display: block;
 		font-size: 18px;
+	}
+	.qrcode{
+		width: 100px;
+		height: 200px;
+		margin: auto;
+		text-align: center;
 	}
 	.gridview{
 		

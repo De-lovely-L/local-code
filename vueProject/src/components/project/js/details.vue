@@ -77,7 +77,6 @@ every() 方法使用指定函数检测数组中的所有元素：
 //			}
 		},
 		created(){
-			debugger
 			this.id = this.$route.params.jsId;
 			console.log(this.id)
 		}

@@ -13,7 +13,8 @@ const home = () => import('@/view/home'),
 	father =() => import('@/frame/father'),
 	mintUi =() => import('@/view/study/mintStudy'),
 	photoShare = () => import('@/components/project/photoShare/index.vue'),
-	custometList =() => import('@/components/customer/index');
+	custometList =() => import('@/components/customer/index'),
+	photoDetail =() => import('@/components/project/photoShare/detail');
 	
 
 Vue.use(Router)
@@ -66,6 +67,11 @@ export default new Router({
 		path:'/project/photoShare',
 		name:'photoShare',
 		component:photoShare
+	},
+	{
+		path:'/project/photoDetail/:id',
+		name:'photoDetail',
+		component:photoDetail
 	},
     {
     	path:'/home',

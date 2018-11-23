@@ -45,7 +45,6 @@ export default{
 	},
 	methods:{
 		handlerDetail(index){
-			debugger
 			this.$router.push({name:'jsDetails',params:{ jsId : index }})
 		}
 	}

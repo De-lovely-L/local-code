@@ -20,7 +20,7 @@ const home = () => import('@/view/home'),
 Vue.use(Router)
 
 export default new Router({
-//	linkActiveClass:'xxx',  可以在这里面添加某个样式类，这样的话默认全局根据路由来添加样式
+	linkActiveClass:'router-link-active',  //可以在这里面添加某个样式类，这样的话默认全局根据路由来添加样式
   routes: [
 //	{
 //	  path: '/login',   

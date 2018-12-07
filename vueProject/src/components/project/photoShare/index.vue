@@ -69,37 +69,37 @@
 					'content':'The most handsome man in the world'
 				}],
 				leading:[{
-					'id':'4',
+					'id':'7',
 					'title':'李敏镐',
 					'url':require('@/assets/vue1.png'),
 					'content':'The most handsome man in the world'
 				},
 				{
-					'id':'5',
+					'id':'8',
 					'title':'嗯嘛~',
 					'url':require('@/assets/vue2.png'),
 					'content':'The most handsome man in the world'
 				},
 				{
-					'id':'6',
+					'id':'9',
 					'title':'大帅哥',
 					'url':require('@/assets/vue3.png'),
 					'content':'The most handsome man in the world'
 				}],
 				food:[{
-					'id':'7',
+					'id':'4',
 					'title':'李敏镐',
 					'url':require('@/assets/food1.jpg'),
 					'content':'The most handsome man in the world'
 				},
 				{
-					'id':'8',
+					'id':'5',
 					'title':'嗯嘛~',
 					'url':require('@/assets/food2.jpg'),
 					'content':'The most handsome man in the world'
 				},
 				{
-					'id':'9',
+					'id':'6',
 					'title':'大帅哥',
 					'url':require('@/assets/food3.jpg'),
 					'content':'The most handsome man in the world'
@@ -153,7 +153,8 @@
 		position: absolute;
 	    padding-bottom: 168px;
 	    height: 100%;
-	    overflow: scroll;
+	    overflow-y: scroll;
+    	overflow-x: hidden;
 	}
 	/*图片懒加载样式*/
 	image[lazy=loading] {

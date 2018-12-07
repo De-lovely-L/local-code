@@ -53,8 +53,13 @@ export default{
 	}
 </script>
 
-<style scoped>
-	.router-link-active{
-		color: red;
+<style>
+	a.router-link-active{
+		color: deeppink;
 	}
+	img {
+	    max-width: 100%;
+	    height: auto;
+	    display: inline-block;
+    }
 </style>
